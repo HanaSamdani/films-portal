@@ -15,6 +15,7 @@ export default class App extends Component {
 
     if(token) {
       this.props.fetchUser(token);
+      this.props.fetchFilms(token);
     }
   }
 

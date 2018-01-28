@@ -4,7 +4,7 @@ import { Route } from 'react-router';
 import Storage from '../lib/storage';
 import App from '../containers/App';
 import User from '../components/User';
-import FilmsList from '../components/Films/List';
+import FilmsList from '../containers/Film/List';
 
 function requireAuth(nextState, replace) {
   if (!Storage.getAccessToken()) {
@@ -27,6 +27,7 @@ function requireNoAuth(nextState, replace) {
 export default (
   <Route name="app" component={App}>
     <Route path="/" component={FilmsList} onEnter={requireAuth}/>
+    <Route path="/:page" component={FilmsList} onEnter={requireAuth}/>
     <Route path="/user" component={User} onEnter={requireNoAuth}/>
   </Route>
 );

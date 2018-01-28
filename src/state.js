@@ -1,5 +1,6 @@
 export default {
   loggedIn: false,
   jwtToken: '',
-  user: {}
+  user: {},
+  films: {}
 }
