@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import reducer from './reducers';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, hashHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
+import { createEpicMiddleware } from 'redux-observable';
 
 import App from './containers/App';
 import routes from './routes';
+import reducers from './reducers';
+import epics from './epics';
 import './assets/styles/index.scss';
 
-const store = createStore(reducer);
+// const epicMiddleware = createEpicMiddleware(epics);
+// const store = createStore(reducers, initialState, applyMiddleware(epicMiddleware));
+const initialState = {};
+const store = createStore(reducers, initialState);
 const history = syncHistoryWithStore(hashHistory, store)
 
 const appContainer = (
