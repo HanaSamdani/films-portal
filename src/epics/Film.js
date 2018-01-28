@@ -101,3 +101,23 @@ export const updateFilmEpic = action$ =>
           return [];
         });
     });
+
+export const rateFilmEpic = action$ =>
+  action$.ofType(Types.RATE_FILM)
+    .mergeMap((action) => {
+      return API.post(`films/${action.id}/ratings`, {score: action.rate}, { host: FILMS_API, token: action.token })
+        .flatMap((result) => {
+          return [];
+        })
+        .catch(error => {
+          console.log(`Could not rate film: ${error.message}`);
+          if (error.response && error.response.status === 401) {
+            Storage.removeAccessToken();
+            return [
+              UserActions.setLoggedIn(false),
+              push('/user')
+            ];
+          }
+          return [];
+        });
+    });
