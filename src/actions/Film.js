@@ -1,9 +1,11 @@
 import * as Types from './constants';
 
-export function fetchFilms(token) {
+export function fetchFilms(token, offset=0, limit=5) {
   return {
     type: Types.FETCH_FILMS,
-    token
+    token,
+    offset,
+    limit
   };
 }
 

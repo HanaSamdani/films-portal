@@ -10,7 +10,7 @@ import * as FilmActions from '../actions/Film';
 export const fetchFilmsEpic = action$ =>
   action$.ofType(Types.FETCH_FILMS)
     .mergeMap((action) => {
-      return API.get('films/', { host: FILMS_API, token: action.token })
+      return API.get(`films?limit=${action.limit}&offset=${action.offset}`, { host: FILMS_API, token: action.token })
         .flatMap((result) => {
           const response = result.data;
           return [

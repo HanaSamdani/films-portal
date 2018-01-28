@@ -27,6 +27,7 @@ function requireNoAuth(nextState, replace) {
 export default (
   <Route name="app" component={App}>
     <Route path="/" component={FilmsList} onEnter={requireAuth}/>
+    <Route path="/:page" component={FilmsList} onEnter={requireAuth}/>
     <Route path="/user" component={User} onEnter={requireNoAuth}/>
   </Route>
 );
