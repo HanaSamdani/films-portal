@@ -6,16 +6,16 @@ let RegisterForm = props => {
   return (
     <form onSubmit={handleSubmit} method="post">
       <div>
-        <label htmlFor="username">Email</label>
-        <Field name="username" component="input" type="email" />
+        <label htmlFor="email">Email</label>
+        <Field name="email" component="input" type="email" />
       </div>
       <div>
         <label htmlFor="email">Password</label>
-        <Field name="password" component="input" type="password" />
+        <Field name="password1" component="input" type="password" />
       </div>
       <div>
         <label htmlFor="email">Re-type Password</label>
-        <Field name="password" component="input" type="password" />
+        <Field name="password2" component="input" type="password" />
       </div>
       <button type="submit">Submit</button>
     </form>

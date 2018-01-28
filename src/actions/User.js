@@ -20,3 +20,10 @@ export function setUserToken(token) {
     token
   };
 }
+
+export function registerUser(data) {
+  return {
+    type: Types.REGISTER_USER,
+    data
+  };
+}

@@ -29,6 +29,7 @@ export default class User extends Component {
   }
 
   handleRegister(data){
+    this.props.registerUser(data);
   }
 
   render() {

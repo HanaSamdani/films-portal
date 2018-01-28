@@ -22,3 +22,20 @@ export const fetchUserTokenEpic = action$ =>
           return [];
         });
     });
+
+export const registerUserEpic = action$ =>
+  action$.ofType(Types.REGISTER_USER)
+    .mergeMap((action) => {
+      return API.post('accounts/signup/', action.data, { host: Hosts.USER_API })
+        .flatMap((result) => {
+          const response = result.data;
+          Storage.setAccessToken(response);
+          return [
+            UserActions.setUserToken(response)
+          ];
+        })
+        .catch(error => {
+          console.log(`Could not register: ${error.message}`);
+          return [];
+        });
+    });
