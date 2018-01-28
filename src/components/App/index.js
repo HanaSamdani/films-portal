@@ -17,7 +17,7 @@ export default class App extends Component {
 
     return (
       <div className="app-wrapper">
-        { this.props.loggedIn && <Header logout={() => {}}/> }
+        { this.props.loggedIn && <Header logout={this.props.logoutUser}/> }
         <div className="content-wrapper">
           { childComponentsWithProps }
         </div>

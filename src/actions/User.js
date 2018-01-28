@@ -27,3 +27,9 @@ export function registerUser(data) {
     data
   };
 }
+
+export function logoutUser() {
+  return {
+    type: Types.LOGOUT_USER
+  };
+}
