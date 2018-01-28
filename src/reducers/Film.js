@@ -6,4 +6,8 @@ export const film = createReducer(initialState, {
   [Types.SET_FILMS](state, action) {
     return Object.assign({}, state, {films: action.payload});
   },
+
+  [Types.SET_FILM](state, action) {
+    return Object.assign({}, state, {currentFilm: action.payload});
+  },
 });

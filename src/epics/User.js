@@ -6,6 +6,7 @@ import Storage from '../lib/storage';
 import { USER_API } from './hosts';
 import * as Types from '../actions/constants';
 import * as UserActions from '../actions/User';
+import * as FilmActions from '../actions/Film';
 
 export const fetchUserTokenEpic = action$ =>
   action$.ofType(Types.FETCH_USER_TOKEN)
@@ -16,6 +17,7 @@ export const fetchUserTokenEpic = action$ =>
           Storage.setAccessToken(response);
           return [
             UserActions.setUserToken(response),
+            FilmActions.fetchFilms(response),
             push('/')
           ];
         })
@@ -76,7 +78,8 @@ export const fetchUserEpic = action$ =>
           if (error.response && error.response.status === 401) {
             Storage.removeAccessToken();
             return [
-              push('/login')
+              UserActions.setLoggedIn(false),
+              push('/user')
             ];
           }
           return [];

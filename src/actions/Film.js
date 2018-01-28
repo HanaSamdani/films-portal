@@ -15,3 +15,35 @@ export function setFilms(payload) {
     payload
   };
 }
+
+export function fetchFilm(token, id) {
+  return {
+    type: Types.FETCH_FILM,
+    token,
+    id
+  };
+}
+
+export function setFilm(payload) {
+  return {
+    type: Types.SET_FILM,
+    payload
+  };
+}
+
+export function createFilm(token, data) {
+  return {
+    type: Types.CREATE_FILM,
+    token,
+    data
+  };
+}
+
+export function updateFilm(token, id, data) {
+  return {
+    type: Types.UPDATE_FILM,
+    token,
+    id,
+    data
+  };
+}
