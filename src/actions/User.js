@@ -33,3 +33,17 @@ export function logoutUser() {
     type: Types.LOGOUT_USER
   };
 }
+
+export function fetchUser(token) {
+  return {
+    type: Types.FETCH_USER,
+    token
+  };
+}
+
+export function setUser(payload) {
+  return {
+    type: Types.SET_USER,
+    payload
+  };
+}

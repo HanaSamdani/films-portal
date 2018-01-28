@@ -59,3 +59,26 @@ export const logoutUserEpic = action$ =>
           return [];
         });
     });
+
+export const fetchUserEpic = action$ =>
+  action$.ofType(Types.FETCH_USER)
+    .mergeMap((action) => {
+      return API.get('/accounts/profile/', { host: Hosts.USER_API, token: action.token })
+        .flatMap((result) => {
+          const response = result.data;
+          return [
+            UserActions.setUser(response),
+            UserActions.setLoggedIn(true)
+          ];
+        })
+        .catch(error => {
+          console.log(`Could not sign out: ${error.message}`);
+          if (error.response && error.response.status === 401) {
+            Storage.removeAccessToken();
+            return [
+              push('/login')
+            ];
+          }
+          return [];
+        });
+    });

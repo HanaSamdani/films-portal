@@ -6,4 +6,5 @@ export default combineEpics(
   UserEpics.fetchUserTokenEpic,
   UserEpics.registerUserEpic,
   UserEpics.logoutUserEpic,
+  UserEpics.fetchUserEpic
 );

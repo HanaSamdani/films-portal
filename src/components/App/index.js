@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 
 import API from '../../lib/api';
+import Storage from '../../lib/storage';
 import Header from './Header';
 
 export default class App extends Component {
 
   constructor(props, context) {
     super(props, context);
+  }
+
+  componentWillMount() {
+    const token = Storage.getAccessToken();
+
+    if(token) {
+      this.props.fetchUser(token);
+    }
   }
 
   render() {
