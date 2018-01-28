@@ -30,6 +30,7 @@ export default class List extends Component {
   render() {
     return (
       <div>
+        <Link to={`films/${this.props.film.id}/edit`}>Edit</Link>
         {
           this.props.film &&
           <div className="film-details-wrapper">

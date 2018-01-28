@@ -33,6 +33,7 @@ export default class List extends Component {
     return (
       <div className="film-list-wrapper">
         <h1>Films</h1>
+        <Link to="films/new">Add new</Link>
         {
           this.props.films.results &&
           <ul className="film-list">
