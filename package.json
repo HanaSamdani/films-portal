@@ -2,11 +2,8 @@
   "name": "films-app",
   "version": "1.0.0",
   "description": "Sample react front-end with User/Films APIs",
-  "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "webpack --watch --progress --color & npm start",
-    "build": "webpack"
+    "build": "webpack --watch --progress --color"
   },
   "keywords": [
     "react",
@@ -27,6 +24,7 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "react-redux": "^5.0.6"
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
   }
 }
