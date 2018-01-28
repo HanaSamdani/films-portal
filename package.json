@@ -1,10 +1,10 @@
 {
   "name": "films-app",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Sample react front-end with User/Films APIs",
-  "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js"
+    "dev": "webpack --watch --progress --color --config ./webpack.dev.js",
+    "build": "webpack --watch --progress --color"
   },
   "keywords": [
     "react",
@@ -14,5 +14,31 @@
     "babel"
   ],
   "author": "Khawaja Jawad Shuja <jawad.shuja@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.9",
+    "node-sass": "^4.7.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.20.1",
+    "tachyons": "^4.9.1",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "es6-promise": "^4.2.4",
+    "react-redux": "^5.0.6",
+    "react-router": "^3.0.2",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.7.2",
+    "redux-form": "^7.2.1",
+    "redux-observable": "^0.17.0",
+    "rxjs": "^5.5.6",
+    "webpack-merge": "^4.1.1"
+  }
 }
