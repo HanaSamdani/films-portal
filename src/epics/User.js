@@ -1,4 +1,5 @@
 import 'rxjs';
+import { push } from 'react-router-redux'
 
 import API from '../lib/api';
 import Storage from '../lib/storage';
@@ -14,7 +15,8 @@ export const fetchUserTokenEpic = action$ =>
           const response = result.data;
           Storage.setAccessToken(response);
           return [
-            UserActions.setUserToken(response)
+            UserActions.setUserToken(response),
+            push('/')
           ];
         })
         .catch(error => {
@@ -31,7 +33,8 @@ export const registerUserEpic = action$ =>
           const response = result.data;
           Storage.setAccessToken(response);
           return [
-            UserActions.setUserToken(response)
+            UserActions.setUserToken(response),
+            push('/')
           ];
         })
         .catch(error => {

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+
 import API from '../../lib/api';
+import Header from './Header';
 
 export default class App extends Component {
 
@@ -15,6 +17,7 @@ export default class App extends Component {
 
     return (
       <div className="app-wrapper">
+        { this.props.loggedIn && <Header logout={() => {}}/> }
         <div className="content-wrapper">
           { childComponentsWithProps }
         </div>
