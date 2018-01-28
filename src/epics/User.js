@@ -3,14 +3,14 @@ import { push } from 'react-router-redux'
 
 import API from '../lib/api';
 import Storage from '../lib/storage';
+import { USER_API } from './hosts';
 import * as Types from '../actions/constants';
 import * as UserActions from '../actions/User';
-import * as Hosts from './hosts';
 
 export const fetchUserTokenEpic = action$ =>
   action$.ofType(Types.FETCH_USER_TOKEN)
     .mergeMap((action) => {
-      return API.post('accounts/login/', action.credentials, { host: Hosts.USER_API })
+      return API.post('accounts/login/', action.credentials, { host: USER_API })
         .flatMap((result) => {
           const response = result.data;
           Storage.setAccessToken(response);
@@ -28,7 +28,7 @@ export const fetchUserTokenEpic = action$ =>
 export const registerUserEpic = action$ =>
   action$.ofType(Types.REGISTER_USER)
     .mergeMap((action) => {
-      return API.post('accounts/signup/', action.data, { host: Hosts.USER_API })
+      return API.post('accounts/signup/', action.data, { host: USER_API })
         .flatMap((result) => {
           const response = result.data;
           Storage.setAccessToken(response);
@@ -46,7 +46,7 @@ export const registerUserEpic = action$ =>
 export const logoutUserEpic = action$ =>
   action$.ofType(Types.LOGOUT_USER)
     .mergeMap((action) => {
-      return API.get('accounts/logout/', { host: Hosts.USER_API })
+      return API.get('accounts/logout/', { host: USER_API })
         .flatMap((result) => {
           Storage.removeAccessToken();
           return [
@@ -63,7 +63,7 @@ export const logoutUserEpic = action$ =>
 export const fetchUserEpic = action$ =>
   action$.ofType(Types.FETCH_USER)
     .mergeMap((action) => {
-      return API.get('/accounts/profile/', { host: Hosts.USER_API, token: action.token })
+      return API.get('accounts/profile/', { host: USER_API, token: action.token })
         .flatMap((result) => {
           const response = result.data;
           return [
