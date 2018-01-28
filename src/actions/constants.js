@@ -12,3 +12,5 @@ export const FETCH_FILMS = 'FETCH_FILMS';
 export const SET_FILMS = 'SET_FILMS';
 export const FETCH_FILM = 'FETCH_FILM';
 export const SET_FILM = 'SET_FILM';
+export const CREATE_FILM = 'CREATE_FILM';
+export const UPDATE_FILM = 'UPDATE_FILM';

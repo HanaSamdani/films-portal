@@ -9,5 +9,7 @@ export default combineEpics(
   UserEpics.logoutUserEpic,
   UserEpics.fetchUserEpic,
   FilmEpics.fetchFilmsEpic,
-  FilmEpics.fetchFilmEpic
+  FilmEpics.fetchFilmEpic,
+  FilmEpics.createFilmEpic,
+  FilmEpics.updateFilmEpic
 );

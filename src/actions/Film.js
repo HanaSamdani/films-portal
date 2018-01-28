@@ -30,3 +30,20 @@ export function setFilm(payload) {
     payload
   };
 }
+
+export function createFilm(token, data) {
+  return {
+    type: Types.CREATE_FILM,
+    token,
+    data
+  };
+}
+
+export function updateFilm(token, id, data) {
+  return {
+    type: Types.UPDATE_FILM,
+    token,
+    id,
+    data
+  };
+}

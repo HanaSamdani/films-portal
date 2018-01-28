@@ -18,10 +18,12 @@ export default class List extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const token = Storage.getAccessToken();
+    if(this.props.params.page != nextProps.params.page) {
+      const token = Storage.getAccessToken();
 
-    if(token && this.props.params.page) {
-      this.props.fetchFilms(token, this.props.params.page);
+      if(token && nextProps.params.page) {
+        this.props.fetchFilms(token, this.props.params.page);
+      }
     }
   }
 
@@ -35,7 +37,7 @@ export default class List extends Component {
           this.props.films.results &&
           <ul className="film-list">
             {this.props.films.results.map((item) => (
-              <li key={item.id} onClick={() => hashHistory.push(`films/${item.id}`)} className="film-list-item">
+              <li key={item.id} onClick={() => hashHistory.push(`films/${item.id}`)}className="film-list-item">
                 <div>{item.title}</div>
                 <div>{item.year}</div>
                 <div>

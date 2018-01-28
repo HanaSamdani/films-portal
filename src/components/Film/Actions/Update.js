@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { Field, reduxForm } from 'redux-form';
 
 import Storage from '../../../lib/storage';
+import Form from './Form';
+
+let UpdateFilmForm = props => {
+  const { handleSubmit } = props
+  return (
+    <Form handleSubmit={handleSubmit} />
+  )
+}
+UpdateFilmForm = reduxForm({
+  form: 'update-film'
+})(UpdateFilmForm)
 
 export default class List extends Component {
 
   constructor(props, context) {
     super(props, context);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillMount() {
@@ -27,24 +39,21 @@ export default class List extends Component {
     }
   }
 
+  handleSubmit(data) {
+    console.log(data);
+    const token = Storage.getAccessToken();
+    if(token) {
+      this.props.updateFilm(token, this.props.params.id, data);
+    }
+  }
+
   render() {
     return (
-      <div>
-        {
-          this.props.film &&
-          <div className="film-details-wrapper">
-            <h1>{this.props.film.title}</h1>
-            <div>
-              <img src={this.props.film.img_url} />
-            </div>
-            <h2>Year</h2>
-            <p>{this.props.film.year}</p>
-            <h2>Description</h2>
-            <p>{this.props.film.description}</p>
-            <h2>Average Score</h2>
-            <p>{this.props.film.average_score}</p>
-          </div>
-        }
+      <div className="film-update-wrapper">
+        <UpdateFilmForm
+          onSubmit={this.handleSubmit}
+          initialValues={this.props.film}
+        />
       </div>
     );
   }
