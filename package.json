@@ -1,0 +1,18 @@
+{
+  "name": "films-app",
+  "version": "1.0.0",
+  "description": "Sample react front-end with User/Films APIs",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "rxjs",
+    "webpack",
+    "babel"
+  ],
+  "author": "Khawaja Jawad Shuja <jawad.shuja@gmail.com>",
+  "license": "ISC"
+}
