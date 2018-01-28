@@ -28,3 +28,25 @@ export const fetchFilmsEpic = action$ =>
           return [];
         });
     });
+
+export const fetchFilmEpic = action$ =>
+  action$.ofType(Types.FETCH_FILM)
+    .mergeMap((action) => {
+      return API.get(`films/${action.id}`, { host: FILMS_API, token: action.token })
+        .flatMap((result) => {
+          const response = result.data;
+          return [
+            FilmActions.setFilm(response),
+          ];
+        })
+        .catch(error => {
+          console.log(`Could not fetch film: ${error.message}`);
+          if (error.response && error.response.status === 401) {
+            Storage.removeAccessToken();
+            return [
+              push('/login')
+            ];
+          }
+          return [];
+        });
+    });

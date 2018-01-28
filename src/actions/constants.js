@@ -10,3 +10,5 @@ export const SET_USER = 'SET_USER';
 // Film Constants
 export const FETCH_FILMS = 'FETCH_FILMS';
 export const SET_FILMS = 'SET_FILMS';
+export const FETCH_FILM = 'FETCH_FILM';
+export const SET_FILM = 'SET_FILM';

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router'
+import { Link, hashHistory } from 'react-router'
 
 import Storage from '../../../lib/storage';
 
@@ -26,6 +26,8 @@ export default class List extends Component {
   }
 
   render() {
+    const token = Storage.getAccessToken();
+
     return (
       <div className="film-list-wrapper">
         <h1>Films</h1>
@@ -33,7 +35,7 @@ export default class List extends Component {
           this.props.films.results &&
           <ul className="film-list">
             {this.props.films.results.map((item) => (
-              <li key={item.id} className="film-list-item">
+              <li key={item.id} onClick={() => hashHistory.push(`films/${item.id}`)} className="film-list-item">
                 <div>{item.title}</div>
                 <div>{item.year}</div>
                 <div>
