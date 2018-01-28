@@ -6,3 +6,17 @@ export function setLoggedIn(status) {
     status
   };
 }
+
+export function fetchUserToken(credentials) {
+  return {
+    type: Types.FETCH_USER_TOKEN,
+    credentials
+  };
+}
+
+export function setUserToken(token) {
+  return {
+    type: Types.SET_USER_TOKEN,
+    token
+  };
+}

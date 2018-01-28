@@ -12,10 +12,9 @@ import reducers from './reducers';
 import epics from './epics';
 import './assets/styles/index.scss';
 
-// const epicMiddleware = createEpicMiddleware(epics);
-// const store = createStore(reducers, initialState, applyMiddleware(epicMiddleware));
 const initialState = {};
-const store = createStore(reducers, initialState);
+const epicMiddleware = createEpicMiddleware(epics);
+const store = createStore(reducers, initialState, applyMiddleware(epicMiddleware));
 const history = syncHistoryWithStore(hashHistory, store)
 
 const appContainer = (

@@ -1,4 +1,7 @@
 import { combineEpics } from 'redux-observable';
 
-// export default combineEpics(
-// );
+import * as UserEpics from './User';
+
+export default combineEpics(
+  UserEpics.fetchUserTokenEpic
+);

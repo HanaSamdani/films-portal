@@ -25,11 +25,10 @@ export default class User extends Component {
   }
 
   handleLogin(data){
-    console.log(data);
+    this.props.fetchUserToken(data);
   }
 
   handleRegister(data){
-    console.log(data);
   }
 
   render() {
