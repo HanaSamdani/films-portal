@@ -4,7 +4,9 @@
   "description": "Sample react front-end with User/Films APIs",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js"
+    "start": "node server/index.js",
+    "dev": "webpack --watch --progress --color & npm start",
+    "build": "webpack"
   },
   "keywords": [
     "react",
@@ -14,5 +16,12 @@
     "babel"
   ],
   "author": "Khawaja Jawad Shuja <jawad.shuja@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.10.0"
+  }
 }
