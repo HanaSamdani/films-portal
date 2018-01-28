@@ -3,14 +3,19 @@ import ReactDOM from 'react-dom';
 import reducer from './reducers';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { Router, hashHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
+
 import App from './containers/App';
+import routes from './routes';
 import './assets/styles/index.scss';
 
-export const store = createStore(reducer);
+const store = createStore(reducer);
+const history = syncHistoryWithStore(hashHistory, store)
 
 const appContainer = (
   <Provider store={store}>
-    <App />
+    <Router history={history} children={routes} />
   </Provider>
 );
 
