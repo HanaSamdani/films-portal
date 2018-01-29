@@ -3,7 +3,7 @@ li.film-list-item {
 }
 
 li.film-list-item > div.bg-white {
-  box-shadow: 2px 2px 4px 2px #aaa;
+  box-shadow: $small-shadow;
 }
 
 li.film-list-item .image {

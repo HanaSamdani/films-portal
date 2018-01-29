@@ -33,7 +33,7 @@ export default class List extends Component {
   render() {
     return (
       <div className="film-create-wrapper">
-        <h1 className="f1 tc pa4">Create Film</h1>
+        <h1 className="f1 tc pa4 ma0">Create Film</h1>
         <CreateFilmForm onSubmit={this.handleSubmit}/>
       </div>
     );
