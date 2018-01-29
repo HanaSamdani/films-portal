@@ -34,7 +34,12 @@ export default class List extends Component {
     return (
       <div className="film-list-wrapper">
         <h1 className="f1 tc pa4 ma0">Browse Films</h1>
-        <Link to="films/new">Add new</Link>
+        <p className="tc f5">
+          <Link className="add-film-btn" to="films/new">
+            <i className="fa fa-plus mr3"></i>
+            Add new film
+          </Link>
+        </p>
         {
           this.props.films.results &&
           <ul className="film-list flex flex-auto flex-wrap pa0">
