@@ -23,26 +23,26 @@ export default class API {
 
   static get(url, options) {
     const apiClient = API.client(options);
-    return Observable.from(apiClient.get(url));
+    return Observable.from(apiClient.get(url,{withCredentials: true}));
   }
 
   static post(url, params, options) {
     const apiClient = API.client(options);
-    return Observable.from(apiClient.post(url, params));
+    return Observable.from(apiClient.post(url, params, {withCredentials: true}));
   }
 
   static put(url, params, options) {
     const apiClient = API.client(options);
-    return Observable.from(apiClient.put(url, params));
+    return Observable.from(apiClient.put(url, params, {withCredentials: true}));
   }
 
   static delete(url, options) {
     const apiClient = API.client(options);
-    return Observable.from(apiClient.delete(url));
+    return Observable.from(apiClient.delete(url, {withCredentials: true}));
   }
 
   static patch(url, params, options) {
     const apiClient = API.client(options);
-    return Observable.from(apiClient.patch(url, params));
+    return Observable.from(apiClient.patch(url, params, {withCredentials: true}));
   }
 }
