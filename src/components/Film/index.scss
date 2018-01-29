@@ -1,0 +1,62 @@
+li.film-list-item {
+  list-style: none;
+}
+
+li.film-list-item > div.bg-white {
+  box-shadow: $small-shadow;
+}
+
+li.film-list-item .image {
+  position: relative;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  height: 15rem;
+  display: block;
+}
+
+li.film-list-item .image:after {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  left: 0;
+  background: $overlay;
+}
+
+.image {
+  color: #fff;
+}
+
+.add-film-btn {
+  color: $primary-button-color;
+}
+
+.film-details-wrapper .image h1,
+.film-details-wrapper .image p,
+.film-details-wrapper .image a {
+  position: relative;
+  z-index: 9999;
+  color: #fff;
+}
+
+.film-details-wrapper .image {
+  background-position: center;
+  background-size: cover;
+  height: 20rem;
+}
+
+.film-details-wrapper .image:before {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 3rem;
+  left: 0;
+  background: $overlay;
+}
+
+.summary {
+  min-height: 50vh;
+}

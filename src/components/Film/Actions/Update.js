@@ -50,6 +50,7 @@ export default class List extends Component {
   render() {
     return (
       <div className="film-update-wrapper">
+        <h1 className="f1 tc pa5 ma0">Update Film</h1>
         <UpdateFilmForm
           onSubmit={this.handleSubmit}
           initialValues={this.props.film}

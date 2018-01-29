@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, hashHistory } from 'react-router'
 
 import Storage from '../../../lib/storage';
+import ListItem from './ListItem';
 
 export default class List extends Component {
 
@@ -32,30 +33,29 @@ export default class List extends Component {
 
     return (
       <div className="film-list-wrapper">
-        <h1>Films</h1>
-        <Link to="films/new">Add new</Link>
+        <h1 className="f1 tc pa5 ma0">Browse Films</h1>
+        <p className="tc f5">
+          <Link className="add-film-btn" to="films/new">
+            <i className="fa fa-plus mr3"></i>
+            Add new film
+          </Link>
+        </p>
         {
           this.props.films.results &&
-          <ul className="film-list">
-            {this.props.films.results.map((item) => (
-              <li key={item.id} onClick={() => hashHistory.push(`films/${item.id}`)}className="film-list-item">
-                <div>{item.title}</div>
-                <div>{item.year}</div>
-                <div>
-                  <img src={item.img_url} />
-                </div>
-              </li>
-            ))}
+          <ul className="film-list flex flex-auto flex-wrap pa0">
+            {this.props.films.results.map((item) => <ListItem key={item.id} item={item}/>)}
           </ul>
         }
-        {
-          this.props.films.previous &&
-          <Link to={`/${(parseInt(this.props.params.page || 0) - 5)}`}>Previous</Link>
-        }
-        {
-          this.props.films.next &&
-          <Link to={`/${(parseInt(this.props.params.page || 0) + 5)}`}>Next</Link>
-        }
+        <div className="pagination pa4">
+          {
+            this.props.films.previous &&
+            <Link className="btn primary ma2" to={`/${(parseInt(this.props.params.page || 0) - 5)}`}>Previous</Link>
+          }
+          {
+            this.props.films.next &&
+            <Link className="btn secondary ma2" to={`/${(parseInt(this.props.params.page || 0) + 5)}`}>Next</Link>
+          }
+        </div>
       </div>
     );
   }

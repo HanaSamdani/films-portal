@@ -1,0 +1,85 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: $primary-text-color;
+}
+
+header {
+  box-shadow: $tiny-shadow;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+
+button, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
+a,
+a:active,
+a:focus {
+  color: initial;
+}
+
+a,
+a:active,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.form-field {
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.form-field label {
+  display: block;
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field input:focus {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 1px solid;
+  padding: .3rem 0;
+  outline: none;
+}
+
+.btn,
+.btn.primary:hover,
+.btn.primary:focus {
+  color: #fff;
+  border: none;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: $primary-button-color;
+}
+
+.btn.primary:hover,
+.btn.primary:focus {
+  background: $primary-button-hover-color;
+}
+
+.btn.secondary {
+  background: $secondary-button-color;
+}
+
+.btn.secondary:hover,
+.btn.secondary:focus {
+  background: $secondary-button-hover-color;
+}
+
+.pagination {
+  width: 100%;
+  text-align: center;
+}
+
