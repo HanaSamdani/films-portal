@@ -23497,7 +23497,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var FILMS_API = exports.FILMS_API = 'https://decorist-films-api.herokuapp.com/api/v1/';
-var USER_API = exports.USER_API = 'http://decorist-user-api.herokuapp.com/api/v1/';
+var USER_API = exports.USER_API = 'https://decorist-user-api.herokuapp.com/api/v1/';
 
 /***/ }),
 /* 319 */
