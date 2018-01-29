@@ -22,7 +22,7 @@ export default class List extends Component {
       const token = Storage.getAccessToken();
 
       if(token && nextProps.params.page) {
-        this.props.fetchFilms(token, this.props.params.page);
+        this.props.fetchFilms(token, nextProps.params.page);
       }
     }
   }

@@ -47,3 +47,12 @@ export function updateFilm(token, id, data) {
     data
   };
 }
+
+export function rateFilm(token, id, rate) {
+  return {
+    type: Types.RATE_FILM,
+    token,
+    id,
+    rate
+  };
+}

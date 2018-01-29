@@ -34,7 +34,7 @@ export default class List extends Component {
       const token = Storage.getAccessToken();
 
       if(token && nextProps.params.id) {
-        this.props.fetchFilms(token, this.props.params.id);
+        this.props.fetchFilm(token, this.props.params.id);
       }
     }
   }

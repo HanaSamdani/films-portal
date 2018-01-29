@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
+import Rating from 'react-rating';
 
 import Storage from '../../../lib/storage';
 
@@ -22,12 +23,14 @@ export default class List extends Component {
       const token = Storage.getAccessToken();
 
       if(token && nextProps.params.id) {
-        this.props.fetchFilms(token, this.props.params.id);
+        this.props.fetchFilm(token, this.props.params.id);
       }
     }
   }
 
   render() {
+    const token = Storage.getAccessToken();
+
     return (
       <div>
         <Link to={`films/${this.props.film.id}/edit`}>Edit</Link>
@@ -35,6 +38,11 @@ export default class List extends Component {
           this.props.film &&
           <div className="film-details-wrapper">
             <h1>{this.props.film.title}</h1>
+            <Rating
+              initialRating={this.props.film.average_score}
+              fractions={2}
+              onChange={(rate) => this.props.rateFilm(token, this.props.film.id, rate * 2)}
+            />
             <div>
               <img src={this.props.film.img_url} />
             </div>
@@ -42,8 +50,6 @@ export default class List extends Component {
             <p>{this.props.film.year}</p>
             <h2>Description</h2>
             <p>{this.props.film.description}</p>
-            <h2>Average Score</h2>
-            <p>{this.props.film.average_score}</p>
           </div>
         }
       </div>
