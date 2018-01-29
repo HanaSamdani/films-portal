@@ -17,7 +17,7 @@ let RegisterForm = props => {
         <label htmlFor="email">Re-type Password</label>
         <Field name="password2" component="input" type="password" />
       </div>
-      <button className="btn" type="submit" className="primary">Register</button>
+      <button className="btn primary" type="submit">Register</button>
     </form>
   )
 }
