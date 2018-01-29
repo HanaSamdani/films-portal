@@ -40,6 +40,12 @@ export const registerUserEpic = action$ =>
           ];
         })
         .catch(error => {
+          if(error.response) {
+            const data = error.response.data;
+            for (let field in data) {
+              alert(`${field}: ${data[field].join()}`);
+            }
+          }
           console.log(`Could not register: ${error.message}`);
           return [];
         });
