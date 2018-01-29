@@ -5,15 +5,15 @@ let LoginForm = props => {
   const { handleSubmit } = props
   return (
     <form onSubmit={handleSubmit} method="post">
-      <div>
+      <div className="form-field">
         <label htmlFor="username">Email</label>
         <Field name="username" component="input" type="email" />
       </div>
-      <div>
+      <div className="form-field">
         <label htmlFor="email">Password</label>
         <Field name="password" component="input" type="password" />
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit" className="primary">Login</button>
     </form>
   )
 }
