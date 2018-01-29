@@ -27,29 +27,37 @@ button, h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
-button,
-button.primary:hover,
-button.primary:focus {
+.btn,
+.btn.primary:hover,
+.btn.primary:focus {
   color: #fff;
   border: none;
   padding: 1rem 1.5rem;
   text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
 }
 
-button.primary {
+.btn.primary {
   background: $primary-button-color;
 }
 
-button.primary:hover,
-button.primary:focus {
+.btn.primary:hover,
+.btn.primary:focus {
   background: $primary-button-hover-color;
 }
 
-button.secondary {
+.btn.secondary {
   background: $secondary-button-color;
 }
 
-button.secondary:hover,
-button.secondary:focus {
+.btn.secondary:hover,
+.btn.secondary:focus {
   background: $secondary-button-hover-color;
 }
+
+.pagination {
+  width: 100%;
+  text-align: center;
+}
+

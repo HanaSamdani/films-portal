@@ -17,7 +17,7 @@ export default function(props) {
         <label htmlFor="year">Year</label>
         <Field name="year" component="input" type="text" />
       </div>
-      <button type="submit">Submit</button>
+      <button className="btn" type="submit">Submit</button>
     </form>
   )
 }

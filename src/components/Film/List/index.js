@@ -41,14 +41,16 @@ export default class List extends Component {
             {this.props.films.results.map((item) => <ListItem key={item.id} item={item}/>)}
           </ul>
         }
-        {
-          this.props.films.previous &&
-          <Link to={`/${(parseInt(this.props.params.page || 0) - 5)}`}>Previous</Link>
-        }
-        {
-          this.props.films.next &&
-          <Link to={`/${(parseInt(this.props.params.page || 0) + 5)}`}>Next</Link>
-        }
+        <div className="pagination pa4">
+          {
+            this.props.films.previous &&
+            <Link className="btn primary ma2" to={`/${(parseInt(this.props.params.page || 0) - 5)}`}>Previous</Link>
+          }
+          {
+            this.props.films.next &&
+            <Link className="btn secondary ma2" to={`/${(parseInt(this.props.params.page || 0) + 5)}`}>Next</Link>
+          }
+        </div>
       </div>
     );
   }
