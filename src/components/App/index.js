@@ -28,11 +28,10 @@ export default class App extends Component {
     return (
       <div className="app-wrapper">
         { this.props.loggedIn && <Header logout={this.props.logoutUser}/> }
-        <div className="content-wrapper">
+        <div className={`content-wrapper ${this.props.loggedIn && 'with-header'}`}>
           { childComponentsWithProps }
         </div>
       </div>
     );
   }
-
 }

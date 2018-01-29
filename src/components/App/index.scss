@@ -2,5 +2,9 @@
   background-color: $page-color;
   width: 100%;
   min-height: 100vh;
+  padding-top: 0rem;
+}
+
+.content-wrapper.with-header {
   padding-top: 3rem;
 }

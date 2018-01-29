@@ -2,9 +2,10 @@ import React from 'react'
 import { Field } from 'redux-form'
 
 export default function(props) {
-  const { handleSubmit } = props
+  const { handleSubmit } = props;
+
   return (
-    <form onSubmit={handleSubmit} method="post">
+    <form onSubmit={handleSubmit} className="film-form w-30-l w-100 pa3 bg-white db tc" method="post">
       <div className="form-field">
         <label htmlFor="title">Title</label>
         <Field name="title" component="input" type="text" />
@@ -17,7 +18,7 @@ export default function(props) {
         <label htmlFor="year">Year</label>
         <Field name="year" component="input" type="text" />
       </div>
-      <button className="btn" type="submit">Submit</button>
+      <button className="btn primary" type="submit">Submit</button>
     </form>
   )
 }
