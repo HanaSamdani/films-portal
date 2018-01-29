@@ -57,8 +57,11 @@ export const logoutUserEpic = action$ =>
           ];
         })
         .catch(error => {
-          console.log(`Could not sign out: ${error.message}`);
-          return [];
+          Storage.removeAccessToken();
+          return [
+            UserActions.setLoggedIn(false),
+            push('/user')
+          ];
         });
     });
 

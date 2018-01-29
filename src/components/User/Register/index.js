@@ -5,9 +5,8 @@ import Form from './Form';
 
 export default function(props) {
   return (
-    <div className="login-wrapper">
+    <div className="register-wrapper ph3 ph5-l pv4 w-60">
       <Form onSubmit={props.handleRegister}/>
-      <a onClick={(e) => props.showLogin(true)}>Click here to login</a>;
     </div>
   );
 };

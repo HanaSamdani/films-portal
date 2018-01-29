@@ -1,14 +1,20 @@
-// Colors
+// Configuration variables
 
 $page-color: rgb(240, 240, 241);
 $section-color: rgb(24, 205, 202);
 $nav-color: rgb(41, 44, 68);
 
-
 $primary-button-color: rgb(255, 83, 73);
-$secondary-button-color: rgb(79, 128, 225);
+$secondary-button-color: rgb(41, 44, 68);
 
-$primary-text-color: $section-color;
+$primary-button-hover-color: rgba(255, 83, 73, 0.9);
+$secondary-button-hover-color: rgba(41, 44, 68, 0.9);
+
+$primary-text-color: $nav-color;
 $secondary-text-color: $primary-button-color;
 
 $primary-border-color: rgba(128, 128, 128, 0.15);
+
+$overlay: rgba(41, 44, 68, 0.4);
+$small-shadow: 2px 2px 4px 2px #aaa;
+$tiny-shadow: 1px 1px 2px 0px #aaa;

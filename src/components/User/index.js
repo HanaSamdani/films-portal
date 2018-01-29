@@ -34,18 +34,22 @@ export default class User extends Component {
 
   render() {
     return (
-      <div className="user-wrapper">
+      <div className="user-wrapper w-100">
         {
           this.state.showLogin ?
-            <Login
-              showLogin={this.handleFormSwitch}
-              handleLogin={this.handleLogin}
-            />
+            <div className="w-100 tc">
+              <Login
+                handleLogin={this.handleLogin}
+              />
+              <a className="white mt2 db mt3" onClick={(e) => this.handleFormSwitch(false)}>Click here to register</a>
+            </div>
             :
-            <Register
-              showLogin={this.handleFormSwitch}
-              handleRegister={this.handleRegister}
-            />
+            <div className="w-100 tc">
+              <Register
+                handleRegister={this.handleRegister}
+              />
+              <a className="white mt2 db mt3" onClick={(e) => this.handleFormSwitch(true)}>Click here to login</a>
+            </div>
         }
       </div>
     );

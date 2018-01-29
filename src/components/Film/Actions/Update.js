@@ -34,7 +34,7 @@ export default class List extends Component {
       const token = Storage.getAccessToken();
 
       if(token && nextProps.params.id) {
-        this.props.fetchFilms(token, this.props.params.id);
+        this.props.fetchFilm(token, this.props.params.id);
       }
     }
   }
@@ -50,6 +50,7 @@ export default class List extends Component {
   render() {
     return (
       <div className="film-update-wrapper">
+        <h1 className="f1 tc pa5 ma0">Update Film</h1>
         <UpdateFilmForm
           onSubmit={this.handleSubmit}
           initialValues={this.props.film}

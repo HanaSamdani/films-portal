@@ -11,5 +11,6 @@ export default combineEpics(
   FilmEpics.fetchFilmsEpic,
   FilmEpics.fetchFilmEpic,
   FilmEpics.createFilmEpic,
-  FilmEpics.updateFilmEpic
+  FilmEpics.updateFilmEpic,
+  FilmEpics.rateFilmEpic
 );
