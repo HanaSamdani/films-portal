@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, hashHistory } from 'react-router'
 
 import Storage from '../../../lib/storage';
+import ListItem from './ListItem';
 
 export default class List extends Component {
 
@@ -36,16 +37,8 @@ export default class List extends Component {
         <Link to="films/new">Add new</Link>
         {
           this.props.films.results &&
-          <ul className="film-list">
-            {this.props.films.results.map((item) => (
-              <li key={item.id} onClick={() => hashHistory.push(`films/${item.id}`)}className="film-list-item">
-                <div>{item.title}</div>
-                <div>{item.year}</div>
-                <div>
-                  <img src={item.img_url} />
-                </div>
-              </li>
-            ))}
+          <ul className="film-list flex flex-auto flex-wrap pa0">
+            {this.props.films.results.map((item) => <ListItem key={item.id} item={item}/>)}
           </ul>
         }
         {

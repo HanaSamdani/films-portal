@@ -1,5 +1,8 @@
+// Vendor styles
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
-@import "~tachyons";
+@import '~tachyons';
+
+// Custom styles
 @import './variables';
 @import './base';
 @import './style';
@@ -7,3 +10,4 @@
 // Module specific stylesheets
 @import '../../components/App/index';
 @import '../../components/User/index';
+@import '../../components/Film/index';
