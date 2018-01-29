@@ -5951,31 +5951,31 @@ var API = function () {
     key: 'get',
     value: function get(url, options) {
       var apiClient = API.client(options);
-      return Observable.from(apiClient.get(url, { withCredentials: true }));
+      return Observable.from(apiClient.get(url));
     }
   }, {
     key: 'post',
     value: function post(url, params, options) {
       var apiClient = API.client(options);
-      return Observable.from(apiClient.post(url, params, { withCredentials: true }));
+      return Observable.from(apiClient.post(url, params));
     }
   }, {
     key: 'put',
     value: function put(url, params, options) {
       var apiClient = API.client(options);
-      return Observable.from(apiClient.put(url, params, { withCredentials: true }));
+      return Observable.from(apiClient.put(url, params));
     }
   }, {
     key: 'delete',
     value: function _delete(url, options) {
       var apiClient = API.client(options);
-      return Observable.from(apiClient.delete(url, { withCredentials: true }));
+      return Observable.from(apiClient.delete(url));
     }
   }, {
     key: 'patch',
     value: function patch(url, params, options) {
       var apiClient = API.client(options);
-      return Observable.from(apiClient.patch(url, params, { withCredentials: true }));
+      return Observable.from(apiClient.patch(url, params));
     }
   }]);
 
@@ -60691,6 +60691,12 @@ var registerUserEpic = exports.registerUserEpic = function registerUserEpic(acti
       _storage2.default.setAccessToken(response);
       return [UserActions.setUserToken(response), (0, _reactRouterRedux.push)('/')];
     }).catch(function (error) {
+      if (error.response) {
+        var data = error.response.data;
+        for (var field in data) {
+          alert(field + ': ' + data[field].join());
+        }
+      }
       console.log('Could not register: ' + error.message);
       return [];
     });

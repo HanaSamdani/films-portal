@@ -32,11 +32,9 @@ export const registerUserEpic = action$ =>
     .mergeMap((action) => {
       return API.post('accounts/signup/', action.data, { host: USER_API })
         .flatMap((result) => {
-          const response = result.data;
-          Storage.setAccessToken(response);
+          alert('Please login now.');
           return [
-            UserActions.setUserToken(response),
-            push('/')
+            push('/user')
           ];
         })
         .catch(error => {
