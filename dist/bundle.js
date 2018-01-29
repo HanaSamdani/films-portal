@@ -60687,9 +60687,8 @@ var fetchUserTokenEpic = exports.fetchUserTokenEpic = function fetchUserTokenEpi
 var registerUserEpic = exports.registerUserEpic = function registerUserEpic(action$) {
   return action$.ofType(Types.REGISTER_USER).mergeMap(function (action) {
     return _api2.default.post('accounts/signup/', action.data, { host: _hosts.USER_API }).flatMap(function (result) {
-      var response = result.data;
-      _storage2.default.setAccessToken(response);
-      return [UserActions.setUserToken(response), (0, _reactRouterRedux.push)('/')];
+      alert('Please login now.');
+      return [(0, _reactRouterRedux.push)('/user')];
     }).catch(function (error) {
       if (error.response) {
         var data = error.response.data;
