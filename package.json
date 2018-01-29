@@ -1,6 +1,6 @@
 {
   "name": "films-app",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Sample react front-end with User/Films APIs",
   "scripts": {
     "dev": "webpack --watch --progress --color --config ./webpack.dev.js",
